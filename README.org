@@ -1,0 +1,5 @@
+* Console Mode Quickstart for Free Pascal
+
+This is a project to help you start writing
+console (text-mode) apps in free pascal.
+
