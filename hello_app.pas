@@ -20,7 +20,7 @@ type
       procedure done; override;
       // and here's a custom method just
       // so you can see how to do it:
-      procedure cwecho( ext : boolean; ch : char );
+      procedure cwecho( ext : boolean; ch : TChr );
     end;
 
 procedure THelloApp.init;
@@ -39,7 +39,7 @@ procedure THelloApp.done;
   end;
 
 procedure THelloApp.keys(km : ukm.TKeyMap);
-  var ch : char;
+  var ch : TChr;
   begin
     // this assigns every key in the keymap to our 'echo' method:
     for ch := #0 to #225 do km.crt[ ch ] := self.cwecho;
@@ -47,7 +47,7 @@ procedure THelloApp.keys(km : ukm.TKeyMap);
     km.cmd[ ^C ] := quit;
   end;
 
-procedure THelloApp.cwecho( ext : boolean; ch : char );
+procedure THelloApp.cwecho( ext : boolean; ch : TChr );
   begin
     if ext then  // non-ascii codes like home/end, alt+letter, etc.
       ok         // do-nothing. (inlined empty procedure from xpc.pas)
