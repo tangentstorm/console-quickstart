@@ -3,3 +3,18 @@
 This is a project to help you start writing
 console (text-mode) apps in free pascal.
 
+* Status (2026 review)
+
+Two-day micro-project from 2014. =hello_app.pas= (65 lines) is a complete
+little demo of the =uapp= framework lifecycle (=init=, =keys=, =step=,
+=done=) plus the =cw= color-write mini-language (e.g. ='|cHello |BWorld|g!'=
+renders "Hello" in cyan, "World" in bright blue, then green).
+
+Heads-up: this repo is *not self-contained*. =hello_app.pas= depends on the
+=xpc= console framework units (=xpc.inc= include file plus units =xpc=,
+=kvm=, =cw=, =cx=, =uapp=, =ukm=), which are not vendored here — they live in
+my other Pascal repos (e.g. =tangentstorm/b4= under =lib/xpl/code/=). It will
+not compile cold without those on the unit path.
+
+Kept as a specimen: the most compact example of the =uapp= lifecycle and
+the =cw= color syntax anywhere.
